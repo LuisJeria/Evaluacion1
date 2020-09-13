@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MisConciertos</string>
+    <string name="nombre_artista">Nombre Artista</string>
+    <string name="artista">Ingrese Nombre del Artista</string>
+    <string name="genero_musical">Seleccione Genero Musical</string>
+    <string name="valor_de_entrada">Valor de Entrada</string>
+    <string name="calificacion">Calificacion</string>
+    <string name="registar">Registar</string>
+
+
+</resources>
