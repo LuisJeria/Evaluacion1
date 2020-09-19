@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tamanioLetra">20sp</dimen>
-    <dimen name="paddingGeneral">10dp</dimen>
+    <dimen name="paddingGeneral">8dp</dimen>
 </resources>

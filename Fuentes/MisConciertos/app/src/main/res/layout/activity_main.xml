@@ -50,9 +50,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
+            android:focusable="false"
             android:padding="@dimen/paddingGeneral"
             android:textSize="@dimen/tamanioLetra"
-            />
+            android:layout_weight="1"
+                />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,8 +124,9 @@
             android:layout_weight="1">
 
         </Spinner>
-    </LinearLayout>
+    </LinearLayout>|
     <Button
+        android:id="@+id/btn_registrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -133,9 +136,24 @@
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/icons"
         />
-    <ListView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/paddingGeneral"
-        />
+        android:orientation="horizontal"
+        android:padding="@dimen/paddingGeneral">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ListView
+                android:id="@+id/registroLV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </ScrollView>
+
+    </LinearLayout>
+
 </LinearLayout>
