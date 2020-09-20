@@ -23,6 +23,10 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/tamanioLetra"
         android:layout_weight="1"/>
+    <ImageView
+        android:id="@+id/imagenlv"
+        android:layout_width="@dimen/tamanioImagen"
+        android:layout_height="@dimen/tamanioImagen"/>
 
 
 </LinearLayout>

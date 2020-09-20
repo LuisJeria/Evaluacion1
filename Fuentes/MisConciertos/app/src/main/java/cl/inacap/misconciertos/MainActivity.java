@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Spinner spinnerCalificacion;
     private Button btnRegistrar;
     private ListView registrolv;
-    private ArrayAdapter<Evento> eventoAdapter;
+    private EventosAdapter eventoAdapter;
+
+
 
 
     EventosDAO eventosDAO = new EventosDAO();
@@ -52,9 +54,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         this.entradaTxt=findViewById(R.id.entrada_txt);
         this.btnRegistrar=findViewById(R.id.btn_registrar);
         this.registrolv=findViewById(R.id.registroLV);
-        this.eventoAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,eventosDAO.getEventos());
-        this.registrolv.setAdapter(eventoAdapter);
-
+        eventoAdapter = new EventosAdapter(MainActivity.this,R.layout.fila_lista,eventosDAO.getEventos());
+        registrolv.setAdapter(eventoAdapter);
 
 
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
             public void onClick(View view) {
                 List<String>errores = new ArrayList<>();
                 int precio = 0;
+                int imagenInt=0;
                 if(artistaTxt.getText().toString().isEmpty()){
                     errores.add("Debe ingresar un artista valido");
                 }
@@ -94,10 +96,10 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     e.setFechaEvento(etFecha.getText().toString());
                     e.setGeneroElegido(spinnerGenero.getItemAtPosition(spinnerGenero.getSelectedItemPosition()).toString());
                     e.setValorEntrada(precio);
-                    e.setCalificacion(Integer.parseInt(spinnerCalificacion.getItemAtPosition(spinnerCalificacion.getSelectedItemPosition()).toString()));
+                    imagenInt =(Integer.parseInt(spinnerCalificacion.getItemAtPosition(spinnerCalificacion.getSelectedItemPosition()).toString())-1);
+                    e.setCalificacion(imagenInt);
                     eventosDAO.add(e);
                     eventoAdapter.notifyDataSetChanged();
-
                     Toast.makeText(MainActivity.this,"Ingreso Correcto",Toast.LENGTH_SHORT).show();
                 }
                 else{

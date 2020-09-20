@@ -15,14 +15,4 @@ public class EventosDAO {
         return eventos;
     }
 
-    public void setEventos(List<Evento> eventos) {
-        this.eventos = eventos;
-    }
-
-    @Override
-    public String toString() {
-        return "EventosDAO{" +
-                "eventos=" + eventos +
-                '}';
-    }
 }
