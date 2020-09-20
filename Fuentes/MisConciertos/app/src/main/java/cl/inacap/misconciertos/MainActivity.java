@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     private Spinner spinnerCalificacion;
     private Button btnRegistrar;
     private ListView registrolv;
+    private ArrayAdapter<Evento> eventoAdapter;
 
 
     EventosDAO eventosDAO = new EventosDAO();
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         this.entradaTxt=findViewById(R.id.entrada_txt);
         this.btnRegistrar=findViewById(R.id.btn_registrar);
         this.registrolv=findViewById(R.id.registroLV);
+        this.eventoAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,eventosDAO.getEventos());
+        this.registrolv.setAdapter(eventoAdapter);
+
 
 
 
@@ -90,8 +94,9 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                     e.setFechaEvento(etFecha.getText().toString());
                     e.setGeneroElegido(spinnerGenero.getItemAtPosition(spinnerGenero.getSelectedItemPosition()).toString());
                     e.setValorEntrada(precio);
-                    e.setCalificacion(spinnerCalificacion.getItemAtPosition(spinnerCalificacion.getSelectedItemPosition()).toString());
+                    e.setCalificacion(Integer.parseInt(spinnerCalificacion.getItemAtPosition(spinnerCalificacion.getSelectedItemPosition()).toString()));
                     eventosDAO.add(e);
+                    eventoAdapter.notifyDataSetChanged();
 
                     Toast.makeText(MainActivity.this,"Ingreso Correcto",Toast.LENGTH_SHORT).show();
                 }
