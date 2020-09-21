@@ -9,19 +9,22 @@
         android:id="@+id/fechalv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/tamanioLetra"
+        android:textAlignment="center"
+        android:textSize="@dimen/letraTabla"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/artistalv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/tamanioLetra"
+        android:textAlignment="center"
+        android:textSize="@dimen/letraTabla"
         android:layout_weight="1"/>
     <TextView
         android:id="@+id/valorlv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/tamanioLetra"
+        android:textAlignment="center"
+        android:textSize="@dimen/letraTabla"
         android:layout_weight="1"/>
     <ImageView
         android:id="@+id/imagenlv"

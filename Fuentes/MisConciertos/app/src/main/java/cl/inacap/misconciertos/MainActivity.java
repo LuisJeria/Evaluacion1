@@ -74,15 +74,18 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
                 int precio = 0;
                 int imagenInt=0;
                 if(artistaTxt.getText().toString().isEmpty()){
-                    errores.add("Debe ingresar un artista valido");
+                    errores.add("Debe ingresar un Artista Valido");
+                }
+                if(etFecha.getText().toString().isEmpty()){
+                    errores.add("Debe escoger una Fecha");
                 }
                 if(spinnerGenero.getSelectedItemPosition()==0){
-                    errores.add("Debe elegir un Genero");
+                    errores.add("Debe escoger un Genero");
                 }
                 try{
                     precio= Integer.parseInt(entradaTxt.getText().toString());
                     if(precio <=0){
-                        errores.add("La entrada debe costar un valor mayor a 0 ");
+                        errores.add("La entrada debe tener un valor mayor a 0 ");
                     }
                 }catch (NumberFormatException ex){
                     errores.add("Debe ingresar un Valor Numerico");

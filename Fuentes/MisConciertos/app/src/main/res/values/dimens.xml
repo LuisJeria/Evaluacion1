@@ -3,4 +3,6 @@
     <dimen name="tamanioLetra">20sp</dimen>
     <dimen name="paddingGeneral">8dp</dimen>
     <dimen name="tamanioImagen">40dp</dimen>
+    <dimen name="largoTabla">250dp</dimen>
+    <dimen name="letraTabla">15sp</dimen>
 </resources>
